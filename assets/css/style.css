@@ -1,0 +1,184 @@
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+.main-container {
+    min-height: 70vh;
+}
+
+/* Header */
+header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.site-title {
+    color: #0d6efd;
+    font-weight: 600;
+}
+
+.search-box .form-control {
+    border-radius: 20px 0 0 20px;
+}
+
+.search-box .btn {
+    border-radius: 0 20px 20px 0;
+}
+
+/* Navbar */
+.navbar {
+    border-bottom: 1px solid #e9ecef;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.navbar .nav-link {
+    font-weight: 500;
+    color: #495057;
+    padding: 0.8rem 1rem;
+    transition: all 0.3s;
+}
+
+.navbar .nav-link:hover {
+    color: #0d6efd;
+}
+
+.navbar .nav-link.active {
+    color: #0d6efd;
+    border-bottom: 2px solid #0d6efd;
+}
+
+.navbar .nav-link i {
+    margin-right: 5px;
+}
+
+/* Footer */
+.footer {
+    border-top: 4px solid #0d6efd;
+}
+
+.footer h5 {
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.footer a:hover {
+    color: #fff !important;
+    text-decoration: none;
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    background-color: #343a40;
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: all 0.3s;
+}
+
+.social-icons a:hover {
+    background-color: #0d6efd;
+    transform: translateY(-3px);
+}
+
+/* Tarjetas de libros */
+.book-card {
+    transition: all 0.3s;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.book-card .card-img-top {
+    height: 250px;
+    object-fit: cover;
+}
+
+.book-card .card-title {
+    font-weight: 600;
+    color: #343a40;
+}
+
+.book-card .badge {
+    font-weight: 500;
+}
+
+/* Tarjetas de autores */
+.author-card {
+    transition: all 0.3s;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.author-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.author-card .author-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+/* Formulario de contacto */
+/* ___________________________________________________________________________________________________*/
+.contenedor {
+    display: flex; /* Alinea en fila */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    gap: 20px; /* Espacio entre la imagen y el formulario */
+}
+
+.imgForm{
+    display: flex;
+    height: 533px;
+    width: 530px;
+    padding: 2rem;
+    border-radius: 18px;
+}
+.contact-form {
+    height: 533px;
+    width:730px;
+    border: 2px solid #0d6efd;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 18px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .form-control {
+    border-radius: 16;
+    border: 1px solid #ced4da;
+    padding: 0.8rem;
+}
+
+.contact-form .form-control:focus {
+    box-shadow: none;
+    border-color: #0d6efd;
+}
+
+.contact-form label {
+    font-weight: 500;
+    color: #495057;
+}
+
+.contact-form button {
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    font-weight: 500;
+    margin:10px;
+
+}
+/* ___________________________________________________________________________________________________*/
