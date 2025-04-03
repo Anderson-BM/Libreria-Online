@@ -54,37 +54,59 @@ header {
     margin-right: 5px;
 }
 
-/* Footer */
-.footer {
-    border-top: 4px solid #0d6efd;
-}
 
-.footer h5 {
-    margin-bottom: 1rem;
-    font-weight: 600;
-}
-
-.footer a:hover {
-    color: #fff !important;
-    text-decoration: none;
-}
-
-.social-icons a {
-    display: inline-block;
-    width: 36px;
-    height: 36px;
-    line-height: 36px;
+footer {
+    background: #222;
+    color: #fff;
+    padding: 40px 0;
     text-align: center;
-    background-color: #343a40;
-    border-radius: 50%;
-    margin-right: 10px;
-    transition: all 0.3s;
+}
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+.footer-section {
+    flex: 1;
+    margin: 20px;
+}
+.footer-section h3 {
+    border-bottom: 2px solid #007bff;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-section ul li {
+    margin: 8px 0;
+}
+.footer-section ul li a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.footer-section ul li a:hover {
+    color: #007bff;
+}
+.social a {
+    margin: 0 10px;
+    color: #bbb;
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+.social a:hover {
+    color: #007bff;
+}
+.footer-bottom {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #444;
 }
 
-.social-icons a:hover {
-    background-color: #0d6efd;
-    transform: translateY(-3px);
-}
 
 /* Tarjetas de libros */
 .book-card {
@@ -149,8 +171,8 @@ header {
     border-radius: 18px;
 }
 .contact-form {
-    height: 533px;
-    width:730px;
+    height: 733px;
+    width:100%SS;
     border: 2px solid #0d6efd;
     background-color: white;
     padding: 2rem;
@@ -179,6 +201,113 @@ header {
     border-radius: 30px;
     font-weight: 500;
     margin:10px;
-
 }
 /* ___________________________________________________________________________________________________*/
+/* ____________________________CARRUSEL___________________________*/
+.carousel {
+    position: relative;
+    width: 1000px;
+    height: 450px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-left: 180px; /* Aumenta el margen para desplazarlo a la derecha */
+}
+.carousel-container {
+    display: flex;
+    width: 30%;  /* En lugar de 300% */
+    transition: transform 0.5s ease-in-out;
+}
+.carousel img {
+    padding: 19px;
+    border-radius: 20px;
+    width: 100%;  /* Ajusta la imagen al ancho del contenedor */
+    height: 100%; /* Ajusta la imagen al alto del contenedor */
+    object-fit: cover; /* Recorta la imagen para llenar el contenedor sin deformarla */  
+    background-size: cover; /* Ajusta la imagen para llenar el contenedor */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita repeticiones */ 
+    width: 100%;
+}
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.prev { left: 10px; }
+.next { right: 10px; }
+/* ___________________________________________________________________________________________________*/
+/* ____________________________LIBRO___________________________*/
+.h2I {
+    display: flex;
+    align-items: center;
+    gap: 50px; 
+    margin-left: 450px; /* Aumenta el margen para desplazarlo a la derecha */
+    padding: 25px;
+}
+.containerr {
+    display: flex;
+    align-items: center;
+    gap: 50px; 
+    margin-left: -90px; /* Aumenta el margen para desplazarlo a la derecha */
+}
+.containerrr {
+    display: flex;
+    align-items: center;
+    gap: 50px; 
+    margin-left: 190px; /* Aumenta el margen para desplazarlo a la derecha */
+}
+.book {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background-color: #fff;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    transform: perspective(800px) rotateY(0deg);
+    transition: transform 0.6s;
+}
+.book:hover {
+    transform: perspective(900px) rotateY(40deg);
+}
+.book h1 {
+    font-size: 24px;
+    color: #333;
+}
+.book p {
+    font-size: 16px;
+    color: #666;
+}
+.book::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -5px;
+    width: 20px;
+    height: 100%;
+    background: linear-gradient(to right, #0d6efd, #3b3a36);
+    border-radius: 5px 0 0 5px;
+}
+.text-block {
+    max-width: 400px;
+    text-align: justify;
+    margin-left: 150px; /* Aumenta el margen para desplazarlo a la derecha */
+}
+.text-block h2 {
+    margin: 1em;
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+}
+.text-block p {
+    font-size: 16px;
+    color: #666;
+}
