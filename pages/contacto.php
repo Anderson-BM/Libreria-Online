@@ -26,7 +26,7 @@ $current_page = 'contacto';
     <h2 class="text-center mb-4">Formulario de Contacto</h2>
     <br>
     <div class="contact-form">
-        <form method="POST" action="">
+        <form method="POST" action="contacto.php">
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu nombre" required>
@@ -60,7 +60,6 @@ $current_page = 'contacto';
 <?php
 $db = new SQLite3('biblioteca.db');
 
-
 $db->exec("CREATE TABLE IF NOT EXISTS contacto (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     nombre TEXT NOT NULL,
@@ -70,15 +69,14 @@ $db->exec("CREATE TABLE IF NOT EXISTS contacto (
     comentarios TEXT NOT NULL
 )");
 
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
+    $id = $_POST['id'];
     $nombre = $_POST['nombre'];
     $correo = $_POST['correo'];
     $fecha = $_POST['fecha'];
     $asunto = $_POST['asunto'];
     $comentarios = $_POST['comentarios'];
-
     
     $stmt = $db->prepare("INSERT INTO contacto (nombre, correo, fecha, asunto, comentarios) VALUES (?, ?, ?, ?, ?)");
     $stmt->bindValue(1, $nombre, SQLITE3_TEXT);
@@ -87,15 +85,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bindValue(4, $asunto, SQLITE3_TEXT);
     $stmt->bindValue(5, $comentarios, SQLITE3_TEXT);
     $stmt->execute();
-
-    
     $mensaje = "¡Gracias por tu comentario, $nombre! Tu mensaje ha sido guardado correctamente.";
 }
 
-
-$comentarios_guardados = $db->query("SELECT nombre, correo, fecha, asunto, comentarios FROM contacto ORDER BY id DESC LIMIT 5");
-?>
-
+$comentarios_guardados = $db->query("SELECT nombre, correo, fecha, asunto, comentarios FROM contacto ORDER BY id DESC LIMIT 5");?>
 
 <div class="container mt-5" id="libros">
     
@@ -110,7 +103,6 @@ $comentarios_guardados = $db->query("SELECT nombre, correo, fecha, asunto, comen
               <?php endif; ?>
             </div>
           </div>
-       
 
           <br><br><br><br><br><br>
       <!-- Más contenido... -->
@@ -129,23 +121,25 @@ $comentarios_guardados = $db->query("SELECT nombre, correo, fecha, asunto, comen
     </div><br><br><br><br>
 
       
-      <div class="mt-5">
-        <h3>Comentarios Recientes</h3>
-        <ul class="list-group">
-          <?php while ($row = $comentarios_guardados->fetchArray()): ?>
+    <div class="mt-5">
+    <h3>Comentarios Recientes</h3>
+    <ul class="list-group">
+        <?php while ($row = $comentarios_guardados->fetchArray()): ?>
             <li class="list-group-item">
-              <strong><?php echo htmlspecialchars($row['nombre']); ?></strong> <br>
-              <em><?php echo htmlspecialchars($row['correo']); ?> - <?php echo htmlspecialchars($row['fecha']); ?></em> <br>
-              <strong>Asunto:</strong> <?php echo htmlspecialchars($row['asunto']); ?> <br>
-              <p><?php echo nl2br(htmlspecialchars($row['comentarios'])); ?></p>
+                <strong><?php echo htmlspecialchars($row['nombre']); ?></strong> <br>
+                <em><?php echo htmlspecialchars($row['correo']); ?> - <?php echo htmlspecialchars($row['fecha']); ?></em> <br>
+                <strong>Asunto:</strong> <?php echo htmlspecialchars($row['asunto']); ?> <br>
+                <p><?php echo nl2br(htmlspecialchars($row['comentarios'])); ?></p>
+                <form method="POST" action="eliminar_comentario.php" class="d-inline">
+                <input type="hidden" name="id" value="<?php echo isset($row['id']) ? htmlspecialchars($row['id']) : ''; ?>">
+                    <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                </form>
             </li>
-          <?php endwhile; ?>
-        </ul>
-      </div>
+        <?php endwhile; ?>
+    </ul> 
+</div>
     </div>
     <br><br><br><br><br><br>
-
-
 
 <?php include_once __DIR__ . '/../includes/footer.php';
 // Incluir pie de página. Al final de tu página, antes de cerrar cualquier contenedor principal.

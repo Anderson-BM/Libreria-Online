@@ -1,5 +1,3 @@
-
-
 ESTRUCTURA DE EL PROYECTO DE LA LIBRERIA ONLINE
 
 
@@ -57,6 +55,3 @@ libreria-online/
 ├── index.php
 ├── README.md
 └── database.sql
-
-
-

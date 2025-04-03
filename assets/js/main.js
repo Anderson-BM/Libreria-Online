@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-
+// AQUI ESTA LA SECCION DE EL SLAY GIRATORIO
 const container = document.querySelector('.carousel-container');
 const images = document.querySelectorAll('.carousel img');
 const prev = document.querySelector('.prev');
