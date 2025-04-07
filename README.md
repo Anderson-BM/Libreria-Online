@@ -1,6 +1,8 @@
 
 ENLACE A LA PAGINA:  http://productosabm.wuaze.com/index.php
 
+Proyecto final de la materia Programacion WEB en el ITLA, el objetivo trata en crear una Libreria-Online Para consultar los libro y autores que se encuentran alojados alli, haciendo uso de todas las tecnologias visto hasta el momento
+
 ![image](https://github.com/user-attachments/assets/348b2dc0-337e-407e-8e3d-da1c75b6c070)
 ![image](https://github.com/user-attachments/assets/6ae710c4-be71-4c6c-be28-482cef20e748)
 ![image](https://github.com/user-attachments/assets/26058077-0fa8-427d-86c8-751ed51b9b6a)
